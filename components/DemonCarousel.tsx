@@ -18,7 +18,7 @@ export const DemonCarousel = () => {
           {Array.from({ length: 8 }).map((_, index) => (
             <CarouselItem key={index}>
               <div className="p-1 h-full">
-                <DemonCarouselFrame num={index + 1} width={150} />
+                <DemonCarouselFrame num={index + 1} width={250} />
               </div>
             </CarouselItem>
           ))}
