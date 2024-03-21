@@ -1,6 +1,7 @@
 'use client';
 
 import Image from 'next/image';
+import { Slider } from '@/components/ui/slider';
 
 export default function Home() {
   return (
@@ -13,13 +14,20 @@ export default function Home() {
         <br />
         but be warned. draven bloodthorn is never beaten.
       </p>
-      <Image
-        className="m-10"
-        src="/npcs/PNG/2.png"
-        alt=""
-        height={300}
-        width={300}
-      />
+      <div className="flex flex-col md:flex-row md:items-center md:justify-around">
+        <div className="md:w-auto">
+          <Image
+            className="m-10"
+            src="/npcs/PNG/2.png"
+            alt=""
+            height={300}
+            width={300}
+          />
+        </div>
+        <div className="w-full md:w-1/3 mt-5 md:mt-0">
+          <Slider defaultValue={[10]} max={20} step={1} />
+        </div>
+      </div>
     </div>
   );
 }
