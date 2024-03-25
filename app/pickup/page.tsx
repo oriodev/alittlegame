@@ -14,7 +14,7 @@ export default function Pickup() {
 
   // start game handler
   const startSearch = () => {
-    router.push('/pickup/gather', { query: items });
+    router.push('/pickup/gather');
   };
 
   return (
