@@ -48,7 +48,7 @@ export default function Home() {
         <div className="md:w-auto">
           <Image
             className="m-10"
-            src="/npcs/PNG/2.png"
+            src="/npcs/dravern/2.png"
             alt=""
             height={300}
             width={300}
