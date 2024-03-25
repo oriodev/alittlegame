@@ -34,6 +34,9 @@ export const Header = () => {
           <DropdownMenuItem>
             <Link href="/mindread">mind reading</Link>
           </DropdownMenuItem>
+          <DropdownMenuItem>
+            <Link href="/pickup">pickup</Link>
+          </DropdownMenuItem>
         </DropdownMenuContent>
       </DropdownMenu>
 
