@@ -1,5 +1,7 @@
 'use client';
 
+import deleteAsaIngredients from '@/actions/deleteAsaIngredients';
+import saveAsaIngredients from '@/actions/saveAsaIngredients';
 import { Button } from '@/components/ui/button';
 import Image from 'next/image';
 import { useRouter } from 'next/navigation';
@@ -13,7 +15,10 @@ export default function Pickup() {
   );
 
   // start game handler
-  const startSearch = () => {
+  const startSearch = async () => {
+    const deleteIngredients = await deleteAsaIngredients();
+    const storeIngredients = saveAsaIngredients(items);
+
     router.push('/pickup/gather');
   };
 
@@ -30,10 +35,10 @@ export default function Pickup() {
         <h1 className="text-3xl">asa&apos;s den</h1>
 
         <p className="italic text-center">
-          greetings, brave adventurer. do me a favour, would ya? i got an
-          alchemy assignment due tomorrow, but i&apos;m missing a few
-          ingredients. could you go grab &apos;em from the forest for me? i pay
-          in coins or kisses, whichever you prefer.
+          hey, sweetheart. do me a favour, would ya? i got an alchemy assignment
+          due tomorrow, but i&apos;m missing a few ingredients. could you go
+          grab &apos;em from the forest for me? i pay in coins or kisses,
+          whichever you prefer.
         </p>
 
         <div className="grid grid-cols-3 gap-8">
@@ -49,7 +54,7 @@ export default function Pickup() {
           ))}
         </div>
 
-        <Button>start adventure</Button>
+        <Button onClick={startSearch}>start adventure</Button>
       </div>
     </div>
   );
